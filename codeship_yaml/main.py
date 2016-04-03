@@ -1,6 +1,6 @@
+import os
+import sys
 import yaml
-from os import system
-from sys import argv, exit
 from warnings import warn
 
 
@@ -36,7 +36,7 @@ class YamlShellCommandsExecuter(object):
             commands = [commands]
 
         for cmd in commands:
-            status = system(cmd)
+            status = os.system(cmd)
             if status > 0:
                 fail(exit_code=status)
 
@@ -49,12 +49,12 @@ def fail(message=None, exit_code=1):
         print(message)
 
     # NOTE: for some reason a large code, such as 32512, results in status 0
-    exit(exit_code if 1 <= exit_code <= 255 else 1)
+    sys.exit(exit_code if 1 <= exit_code <= 255 else 1)
 
 
 def main():
-    if len(argv) > 1:
-        sections = argv[1:]
+    if len(sys.argv) > 1:
+        sections = sys.argv[1:]
         warnings = True
     else:
         sections = [
