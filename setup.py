@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # Codeship-YAML, YAML configuration file support for Codeship.
-# Copyright (C) 2016  Painless Software, Peter Bittner <peter@painless.software>
+# Copyright (C) 2016  Painless Software <info@painless.software>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -75,7 +75,8 @@ setup(
 
     description=package.__doc__.strip(),
     long_description=read_file('README.rst'),
-    keywords='continuous integration, continuous delivery, devops, build server, infrastructure, tools',
+    keywords='continuous integration, continuous delivery, '
+             'devops, build server, infrastructure, tools',
 
     classifiers=CLASSIFIERS,
     install_requires=read_file('requirements.txt'),

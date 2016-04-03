@@ -37,7 +37,7 @@ supported.  Example:
      - echo "Now we can deploy"
 
 To make Codeship read and interpret your ``codeship.yml`` file, and execute
-the commands in it add the following lines in the "Setup Commands" text box
+the commands in it add the following lines in the **Setup Commands** text box
 at *Codeship* > *Select Project...* > *(your project)*, *Project Settings* >
 *Test Settings*.
 
@@ -47,7 +47,7 @@ at *Codeship* > *Select Project...* > *(your project)*, *Project Settings* >
    codeship-yaml
 
 This will make ``codeship-yaml`` execute the commands you specified in the
-following section order:
+default sections in the following section order:
 
 #. ``install``
 #. ``before_script``
@@ -59,7 +59,7 @@ More Control
 
 If you want more control over which sections are executed you can specify the
 requested section as a parameter.  For example, you could add the following
-commands into the mentioned text boxes of your Codeship project.
+commands into the below-mentioned text boxes of your Codeship project:
 
 *Project Settings* > *Test Settings* > **Setup Commands**
 
@@ -79,6 +79,10 @@ commands into the mentioned text boxes of your Codeship project.
 .. code-block:: bash
 
    codeship-yaml after_success
+
+Adding custom sections, other than the default ones, to your ``codeship.yml``
+file is possible but discouraged (to avoid losing similarity with other build
+platforms).
 
 Credits
 =======
