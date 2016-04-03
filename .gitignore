@@ -1,0 +1,20 @@
+# tools, IDEs
+/.idea/
+/*.geany
+
+# Python
+__pycache__/
+*.py[cod]
+
+# build files and folders
+.cache/
+/.coverage
+/coverage.xml
+.sass-cache/
+/.tox/
+/build/
+/dist/
+/*.egg/
+/*.egg-info/
+/*.eggs/
+/docs/build/
