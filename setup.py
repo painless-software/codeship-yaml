@@ -21,7 +21,6 @@ from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
 import codeship_yaml as package
-import sys
 
 CLASSIFIERS = [
     'Development Status :: 3 - Alpha',
@@ -40,12 +39,12 @@ CLASSIFIERS = [
 ]
 
 
-class PyTest(TestCommand):
-    user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
+class Tox(TestCommand):
+    user_options = [('tox-args=', 'a', "Arguments to pass to tox")]
 
     def initialize_options(self):
         TestCommand.initialize_options(self)
-        self.pytest_args = []
+        self.tox_args = None
 
     def finalize_options(self):
         TestCommand.finalize_options(self)
@@ -53,8 +52,13 @@ class PyTest(TestCommand):
         self.test_suite = True
 
     def run_tests(self):
-        import pytest
-        errno = pytest.main(self.pytest_args)
+        import shlex
+        import sys
+        import tox
+        args = self.tox_args
+        if args:
+            args = shlex.split(self.tox_args)
+        errno = tox.cmdline(args=args)
         sys.exit(errno)
 
 
@@ -84,8 +88,8 @@ setup(
     include_package_data=True,
     zip_safe=False,
 
-    tests_require=['pytest'],
-    cmdclass={'test': PyTest},
+    tests_require=['tox'],
+    cmdclass={'test': Tox},
     entry_points={
         'console_scripts': [
             'codeship-yaml = codeship_yaml.main:main',
