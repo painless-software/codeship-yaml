@@ -1,2 +1,2 @@
 script:
-  - tox
+  - python setup.py test

@@ -88,7 +88,7 @@ Credits
 =======
 
 This project is brought to you by `Painless Software`_, a best-practice
-consultancy for software development.  Less pain, more fun.
+consultancy in software development.  Less pain, more fun.
 
 
 .. |latest-version| image:: https://img.shields.io/pypi/v/codeship-yaml.svg
