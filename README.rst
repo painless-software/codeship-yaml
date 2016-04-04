@@ -89,7 +89,8 @@ commands into the below-mentioned text boxes of your Codeship project:
 
 Adding custom sections, other than the default ones, to your ``codeship.yml``
 file is possible but discouraged (to avoid losing similarity with other build
-platforms).
+platforms).  If you want an additional section, which is established on other
+platforms already, please consider placing a `pull request`_.
 
 Contribute
 ==========
@@ -97,7 +98,7 @@ Contribute
 For development we use `tox`_, which handles both static code analysis and
 tests for all supported Python versions.  ``tox`` is automatically installed
 for the test runs and will work out-of-the-box when you run the tests through
-``setup.py``.  Unfortunately, you'll have to install ``virtualenv`` though.
+``setup.py``.  Unfortunately, you'll have to install ``virtualenv`` though:
 
 .. code-block:: bash
 
@@ -109,10 +110,10 @@ After making your code changes don't forget to add tests, and simply run:
 
    $ python setup.py test
 
-When you place a `pull request`_ all tests are run again on the build server
-infrastructure of `Codeship`_, `Travis-CI`_ and `Shippable`_.  Please check if
-they all pass to ensure the syntax stays compatible across different build
-infrastructures.
+When you place a `pull request`_ all tests are run on the build server
+infrastructure of `Codeship`_, `Travis-CI`_ and `Shippable`_ again.  Please
+check if they all pass to ensure the syntax stays compatible across different
+build infrastructures.
 
 Credits
 =======
