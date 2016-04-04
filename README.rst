@@ -97,9 +97,13 @@ Contribute
 For development we use `tox`_, which handles both static code analysis and
 tests for all supported Python versions.  ``tox`` is automatically installed
 for the test runs and will work out-of-the-box when you run the tests through
-``setup.py``, given you have ``virtualenv`` installed on your machine.
+``setup.py``.  Unfortunately, you'll have to install ``virtualenv`` though.
 
-After making your changes don't forget to add tests, and simply run:
+.. code-block:: bash
+
+   $ pip install virtualenv
+
+After making your code changes don't forget to add tests, and simply run:
 
 .. code-block:: bash
 

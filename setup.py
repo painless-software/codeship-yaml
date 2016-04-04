@@ -60,6 +60,17 @@ class Tox(TestCommand):
         sys.exit(errno)
 
 
+class Clean(TestCommand):
+    def run(self):
+        from os import system
+        system('find . -type f -name *.pyc -exec rm -v {} \;')
+        system('find . -type d -name .tox  -exec rm -rv {} \;')
+        system('find . -type d -name build -exec rm -rv {} \;')
+        system('find . -type d -name dist  -exec rm -rv {} \;')
+        system('find . -type d -name .eggs -exec rm -rv {} \;')
+        system('find . -type d -name *.egg-info -exec rm -rv {} \;')
+
+
 def read_file(*pathname):
     with open(join(dirname(abspath(__file__)), *pathname)) as f:
         return f.read()
@@ -87,7 +98,10 @@ setup(
     zip_safe=False,
 
     tests_require=['tox'],
-    cmdclass={'test': Tox},
+    cmdclass={
+        'clean': Clean,
+        'test': Tox,
+    },
     entry_points={
         'console_scripts': [
             'codeship-yaml = codeship_yaml.main:main',

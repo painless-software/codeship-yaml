@@ -1,1 +1,5 @@
-codeship.yml
+sudo: required
+install:
+  - sudo pip install virtualenv
+script:
+  - python setup.py test

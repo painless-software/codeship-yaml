@@ -3,6 +3,13 @@ import sys
 import yaml
 from warnings import warn
 
+try:
+    # only avalable in Python 3
+    FileNotFoundError
+except NameError:
+    # Python 2
+    FileNotFoundError = IOError
+
 
 class YamlShellCommandsExecuter(object):
     """
