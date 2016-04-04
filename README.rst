@@ -2,9 +2,16 @@
 Codeship-YAML |latest-version|
 ==============================
 
-|build-status| |health| |downloads| |license| |gitter|
+|codeship| |health| |downloads| |license| |gitter|
 
 YAML configuration file support for `Codeship`_.
+
+=========== ============
+Syntax Compatibility
+========================
+Travis-CI   |travis-ci|
+Shippable   |shippable|
+=========== ============
 
 Background
 ==========
@@ -87,18 +94,21 @@ platforms).
 Contribute
 ==========
 
-For development you only need to install `tox`_ in addition, which handles
-both static code analysis and tests for all supported Python versions:
-
-.. code-block:: bash
-
-   pip install tox
+For development we use `tox`_, which handles both static code analysis and
+tests for all supported Python versions.  ``tox`` is automatically installed
+for the test runs and will work out-of-the-box when you run the tests through
+``setup.py``, given you have ``virtualenv`` installed on your machine.
 
 After making your changes don't forget to add tests, and simply run:
 
 .. code-block:: bash
 
-   tox
+   $ python setup.py test
+
+When you place a `pull request`_ all tests are run again on the build server
+infrastructure of `Codeship`_, `Travis-CI`_ and `Shippable`_.  Please check if
+they all pass to ensure the syntax stays compatible across different build
+infrastructures.
 
 Credits
 =======
@@ -110,9 +120,15 @@ consultancy in software development.  Less pain, more fun.
 .. |latest-version| image:: https://img.shields.io/pypi/v/codeship-yaml.svg
    :alt: Latest version on PyPI
    :target: https://pypi.python.org/pypi/codeship-yaml
-.. |build-status| image:: https://codeship.com/projects/1ff93f70-dc1f-0133-bbf0-32121d68b74a/status?branch=master
+.. |codeship| image:: https://codeship.com/projects/1ff93f70-dc1f-0133-bbf0-32121d68b74a/status?branch=master
    :alt: Build status
    :target: https://codeship.com/projects/144011
+.. |travis-ci| image:: https://travis-ci.org/painless-software/codeship-yaml.svg
+   :alt: Build status
+   :target: https://travis-ci.org/painless-software/codeship-yaml
+.. |shippable| image:: https://api.shippable.com/projects/5701ae1233e2f1203f8cab18/badge?branch=master
+   :alt: Build status
+   :target: https://app.shippable.com/projects/5701ae1233e2f1203f8cab18
 .. |health| image:: https://landscape.io/github/painless-software/codeship-yaml/master/landscape.svg?style=flat
    :target: https://landscape.io/github/painless-software/codeship-yaml/master
    :alt: Code health
@@ -132,4 +148,5 @@ consultancy in software development.  Less pain, more fun.
 .. _Travis-CI: https://travis-ci.org/
 .. _Shippable: https://shippable.com/
 .. _tox: https://testrun.org/tox/latest/
+.. _pull request: https://github.com/painless-software/codeship-yaml/pulls
 .. _Painless Software: https://painless.software/
