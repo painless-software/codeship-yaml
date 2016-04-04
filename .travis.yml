@@ -1,5 +1,6 @@
-sudo: required
+language: python
+python: 3.4
 install:
-  - sudo pip install virtualenv
+  - pip install --user virtualenv
 script:
   - python setup.py test
