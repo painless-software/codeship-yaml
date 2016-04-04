@@ -1,6 +1,5 @@
 language: python
-python: 3.4
 install:
-  - pip install --user virtualenv
+  - pip install virtualenv
 script:
   - python setup.py test
