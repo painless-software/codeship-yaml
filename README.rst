@@ -9,7 +9,7 @@ YAML configuration file support for `Codeship`_.
 =========== ============
 Syntax Compatibility
 ========================
-Travis-CI   |travis-ci|
+Travis CI   |travis-ci|
 Shippable   |shippable|
 =========== ============
 
@@ -28,8 +28,8 @@ make you more happy.)
 Usage
 =====
 
-Create a ``codeship.yml`` file in your respository at root level.  The syntax
-is inspired by `Travis-CI`_ and `Shippable`_, though only limited features are
+Create a ``codeship.yml`` file in your repository at root level.  The syntax
+is inspired by `Travis CI`_ and `Shippable`_, though only limited features are
 supported.  Example:
 
 .. code-block:: yaml
@@ -111,7 +111,7 @@ After making your code changes don't forget to add tests, and simply run:
    $ python setup.py test
 
 When you place a `pull request`_ all tests are run on the build server
-infrastructure of `Codeship`_, `Travis-CI`_ and `Shippable`_ again.  Please
+infrastructure of `Codeship`_, `Travis CI`_ and `Shippable`_ again.  Please
 check if they all pass to ensure the syntax stays compatible across different
 build infrastructures.
 
@@ -150,7 +150,7 @@ consultancy in software development.  Less pain, more fun.
 .. _Codeship: https://codeship.com/
 .. _infrastructure as code: https://en.wikipedia.org/wiki/Infrastructure_as_Code
 .. _users are complaining: http://stackoverflow.com/questions/31772306/doesnt-codeship-support-yaml-configure-file
-.. _Travis-CI: https://travis-ci.org/
+.. _Travis CI: https://travis-ci.org/
 .. _Shippable: https://shippable.com/
 .. _tox: https://testrun.org/tox/latest/
 .. _pull request: https://github.com/painless-software/codeship-yaml/pulls
