@@ -143,7 +143,7 @@ consultancy in software development.  Less pain, more fun.
 .. |license| image:: https://img.shields.io/pypi/l/codeship-yaml.svg
    :alt: Software license
    :target: https://www.gnu.org/licenses/gpl-3.0.html
-.. |gitter| image:: https://badges.gitter.im/Join%20Chat.svg
+.. |gitter| image:: https://badges.gitter.im/painless-software/codeship-yaml.svg
    :alt: Gitter chat room
    :target: https://gitter.im/painless-software/codeship-yaml
 
