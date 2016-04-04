@@ -41,6 +41,8 @@ class YamlShellCommandsExecuter(object):
 
         if isinstance(commands, str):
             commands = [commands]
+        elif commands is None:
+            commands = []
 
         for cmd in commands:
             status = os.system(cmd)
