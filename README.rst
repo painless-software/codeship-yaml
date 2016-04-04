@@ -84,6 +84,22 @@ Adding custom sections, other than the default ones, to your ``codeship.yml``
 file is possible but discouraged (to avoid losing similarity with other build
 platforms).
 
+Contribute
+==========
+
+For development you only need to install `tox`_ in addition, which handles
+both static code analysis and tests for all supported Python versions:
+
+.. code-block:: bash
+
+   pip install tox
+
+After making your changes don't forget to add tests, and simply run:
+
+.. code-block:: bash
+
+   tox
+
 Credits
 =======
 
@@ -94,9 +110,9 @@ consultancy in software development.  Less pain, more fun.
 .. |latest-version| image:: https://img.shields.io/pypi/v/codeship-yaml.svg
    :alt: Latest version on PyPI
    :target: https://pypi.python.org/pypi/codeship-yaml
-.. |build-status| image:: https://codeship.com/projects/12345678-1234-1234-1234-123456789000/status?branch=master
+.. |build-status| image:: https://codeship.com/projects/1ff93f70-dc1f-0133-bbf0-32121d68b74a/status?branch=master
    :alt: Build status
-   :target: https://codeship.com/projects/123456
+   :target: https://codeship.com/projects/144011
 .. |health| image:: https://landscape.io/github/painless-software/codeship-yaml/master/landscape.svg?style=flat
    :target: https://landscape.io/github/painless-software/codeship-yaml/master
    :alt: Code health
@@ -115,4 +131,5 @@ consultancy in software development.  Less pain, more fun.
 .. _users are complaining: http://stackoverflow.com/questions/31772306/doesnt-codeship-support-yaml-configure-file
 .. _Travis-CI: https://travis-ci.org/
 .. _Shippable: https://shippable.com/
+.. _tox: https://testrun.org/tox/latest/
 .. _Painless Software: https://painless.software/

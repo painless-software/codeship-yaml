@@ -1,0 +1,8 @@
+install:
+  - echo "This is the INSTALL section"
+before_script:
+  - echo "This ist the BEFORE_SCRIPT section"
+script:
+  - echo "This is the SCRIPT section"
+after_success:
+  - echo "This is the AFTER_SUCCESS section"
