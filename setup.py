@@ -35,6 +35,14 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3.4',
     'Topic :: Software Development :: Build Tools',
 ]
+KEYWORDS = [
+    'build server',
+    'continuous integration',
+    'continuous delivery',
+    'devops',
+    'infrastructure',
+    'tools',
+]
 
 
 class Tox(TestCommand):
@@ -86,18 +94,14 @@ setup(
     maintainer_email=package.__maintainer_email__,
     url=package.__url__,
     license=package.__license__,
-
     description=package.__doc__.strip(),
     long_description=read_file('README.rst'),
-    keywords='continuous integration, continuous delivery, '
-             'devops, build server, infrastructure, tools',
-
+    keywords=KEYWORDS,
     classifiers=CLASSIFIERS,
     install_requires=read_file('requirements.txt'),
     packages=find_packages(exclude=['docs', 'tests']),
     include_package_data=True,
     zip_safe=False,
-
     tests_require=['tox'],
     cmdclass={
         'clean': Clean,
