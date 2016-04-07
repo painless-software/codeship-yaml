@@ -16,9 +16,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+from glob import glob
+from os import remove
 from os.path import abspath, dirname, join
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
+from shlex import split
+from shutil import rmtree
+from sys import exit
 
 import codeship_yaml as package
 
@@ -58,26 +63,48 @@ class Tox(TestCommand):
         self.test_suite = True
 
     def run_tests(self):
-        import shlex
-        import sys
-        import tox
+        from tox import cmdline
         args = self.tox_args
         if args:
-            args = shlex.split(self.tox_args)
-        errno = tox.cmdline(args=args)
-        sys.exit(errno)
+            args = split(self.tox_args)
+        errno = cmdline(args=args)
+        exit(errno)
 
 
 class Clean(TestCommand):
     def run(self):
-        from os import system
-        system('find . -type f -name *.pyc -exec rm -v {} \;')
-        system('find . -type d -name __pycache__ -exec rm -rv {} \;')
-        system('find . -type d -name .tox  -exec rm -rv {} \;')
-        system('find . -type d -name build -exec rm -rv {} \;')
-        system('find . -type d -name dist  -exec rm -rv {} \;')
-        system('find . -type d -name .eggs -exec rm -rv {} \;')
-        system('find . -type d -name *.egg-info  -exec rm -rv {} \;')
+        delete_in_root = [
+            'build',
+            'dist',
+            '.eggs',
+            '*.egg-info',
+            '.tox',
+        ]
+        delete_everywhere = [
+            '__pycache__',
+            '*.pyc',
+        ]
+        for candidate in delete_in_root:
+            rmtree_glob(candidate)
+        for visible_dir in glob('[A-Za-z0-9]*'):
+            for candidate in delete_everywhere:
+                rmtree_glob(join(visible_dir, candidate))
+                rmtree_glob(join(visible_dir, '*', candidate))
+                rmtree_glob(join(visible_dir, '*', '*', candidate))
+                rmtree_glob(join(visible_dir, '*', '*', '*', candidate))
+
+
+def rmtree_glob(file_glob):
+    for fobj in glob(file_glob):
+        try:
+            rmtree(fobj)
+            print('%s/ removed ...' % fobj)
+        except OSError:
+            try:
+                remove(fobj)
+                print('%s removed ...' % fobj)
+            except OSError:
+                pass
 
 
 def read_file(*pathname):

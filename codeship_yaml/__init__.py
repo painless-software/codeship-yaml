@@ -1,7 +1,7 @@
 """
 YAML configuration file support for Codeship.
 """
-__version__ = '0.1.2-dev1'
+__version__ = '0.1.2.dev1'
 __author__ = 'Peter Bittner'
 __author_email__ = 'peter@painless.software'
 __maintainer__ = 'Painless Software'
