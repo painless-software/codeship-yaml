@@ -115,6 +115,12 @@ infrastructure of `Codeship`_, `Travis CI`_ and `Shippable`_ again.  Please
 check if they all pass to ensure the syntax stays compatible across different
 build infrastructures.
 
+To remove all build files and folders including Python byte code you can run:
+
+.. code-block:: bash
+
+   $ python setup.py clean
+
 Credits
 =======
 
