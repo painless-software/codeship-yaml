@@ -2,7 +2,7 @@
 Codeship-YAML |latest-version|
 ==============================
 
-|codeship| |health| |downloads| |license| |gitter|
+|codeship| |health| |python-support| |downloads| |license| |gitter|
 
 YAML configuration file support for `Codeship`_.
 
@@ -11,6 +11,7 @@ Syntax Compatibility
 ========================
 Travis CI   |travis-ci|
 Shippable   |shippable|
+VexorCI     |vexor-ci|
 =========== ============
 
 Background
@@ -140,9 +141,15 @@ consultancy in software development.  Less pain, more fun.
 .. |shippable| image:: https://api.shippable.com/projects/5701ae1233e2f1203f8cab18/badge?branch=master
    :alt: Build status
    :target: https://app.shippable.com/projects/5701ae1233e2f1203f8cab18
+.. |vexor-ci| image:: https://ci.vexor.io/projects/15c50c86-b271-462f-876a-6461ff9debaa/status.svg
+   :alt: Build status
+   :target: https://ci.vexor.io/ui/projects/15c50c86-b271-462f-876a-6461ff9debaa/builds
 .. |health| image:: https://landscape.io/github/painless-software/codeship-yaml/master/landscape.svg?style=flat
    :target: https://landscape.io/github/painless-software/codeship-yaml/master
    :alt: Code health
+.. |python-support| image:: https://img.shields.io/pypi/pyversions/codeship-yaml.svg
+   :target: https://pypi.python.org/pypi/codeship-yaml
+   :alt: Python versions
 .. |downloads| image:: https://img.shields.io/pypi/dm/codeship-yaml.svg
    :alt: Monthly downloads from PyPI
    :target: https://pypi.python.org/pypi/codeship-yaml
