@@ -51,7 +51,8 @@ at *Codeship* > *Select Project...* > *(your project)*, *Project Settings* >
 
 .. code-block:: bash
 
-   pip install codeship-yaml && codeship-yaml
+   pip install codeship-yaml
+   codeship-yaml
 
 This will make ``codeship-yaml`` execute the commands you specified in the
 default sections in the following section order:
@@ -91,6 +92,23 @@ Adding custom sections, other than the default ones, to your ``codeship.yml``
 file is possible but discouraged (to avoid losing similarity with other build
 platforms).  If you want an additional section, which is established on other
 platforms already, please consider placing a `pull request`_.
+
+Python 3
+========
+
+The build image of Codeship's classic infrastructure supports both `Python
+2.7 and 3.4`_, but for Python 3 some outdated packages will make you run into
+broken builds (e.g. when you install `packages with environment markers`_ in
+setup.py).
+
+To have fully working Python 3.4 support use the following setup commands in
+*Project Settings* > *Test Settings* > **Setup Commands**:
+
+.. code-block:: bash
+
+   virtualenv -p $(which python3) "${HOME}/cache/python3_env"
+   . "${HOME}/cache/python3_env/bin/activate" && python --version
+   pip install --upgrade setuptools && pip list | grep setuptools
 
 Contribute
 ==========
@@ -164,6 +182,8 @@ consultancy in software development.  Less pain, more fun.
 .. _users are complaining: http://stackoverflow.com/questions/31772306/doesnt-codeship-support-yaml-configure-file
 .. _Travis CI: https://travis-ci.org/
 .. _Shippable: https://shippable.com/
+.. _Python 2.7 and 3.4: https://codeship.com/documentation/languages/python/
+.. _packages with environment markers: https://github.com/gtimelog/gtimelog/commit/e42cf0e
 .. _tox: https://testrun.org/tox/latest/
 .. _pull request: https://github.com/painless-software/codeship-yaml/pulls
 .. _Painless Software: https://painless.software/
