@@ -51,8 +51,7 @@ at *Codeship* > *Select Project...* > *(your project)*, *Project Settings* >
 
 .. code-block:: bash
 
-   pip install codeship-yaml
-   codeship-yaml
+   pip install codeship-yaml && codeship-yaml
 
 This will make ``codeship-yaml`` execute the commands you specified in the
 default sections in the following section order:
