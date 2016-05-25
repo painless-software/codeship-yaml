@@ -103,8 +103,8 @@ def rmtree_glob(file_glob):
             try:
                 remove(fobj)
                 print('%s removed ...' % fobj)
-            except OSError:
-                pass
+            except OSError as err:
+                print(err)
 
 
 def read_file(*pathname):
