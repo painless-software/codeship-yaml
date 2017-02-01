@@ -112,6 +112,10 @@ To have fully working Python 3.4 support use the following setup commands in
    . "${HOME}/cache/python3_env/bin/activate" && python --version
    pip install --upgrade setuptools && pip list | grep setuptools
 
+Update:
+   More Python versions are now supported via a ``python.sh`` script
+   provided by Codeship. See the `top of the script`_ for usage instructions.
+
 Contribute
 ==========
 
@@ -187,6 +191,7 @@ consultancy in software development.  Less pain, more fun.
 .. _Vexor: https://vexor.io/
 .. _Python 2.7 and 3.4: https://codeship.com/documentation/languages/python/
 .. _packages with environment markers: https://github.com/gtimelog/gtimelog/commit/e42cf0e
+.. _top of the script: https://github.com/codeship/scripts/blob/master/languages/python.sh#L2-L10
 .. _tox: https://tox.readthedocs.io/en/latest/
 .. _pull request: https://github.com/painless-software/codeship-yaml/pulls
 .. _Painless Software: https://painless.software/
