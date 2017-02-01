@@ -8,7 +8,7 @@ YAML configuration file support for `Codeship`_.
 
 =========== ============
 Syntax Compatibility
-========================
+=========== ============
 Travis CI   |travis-ci|
 Shippable   |shippable|
 VexorCI     |vexor-ci|
@@ -129,9 +129,9 @@ After making your code changes don't forget to add tests, and simply run:
    $ python setup.py test
 
 When you place a `pull request`_ all tests are run on the build server
-infrastructure of `Codeship`_, `Travis CI`_ and `Shippable`_ again.  Please
-check if they all pass to ensure the syntax stays compatible across different
-build infrastructures.
+infrastructure of `Codeship`_, `Travis CI`_, `Shippable`_ and `Vexor`_ again.
+Please check if they all pass to ensure the syntax stays compatible across the
+different build infrastructures.
 
 To remove all build files and folders including Python byte code you can run:
 
@@ -182,8 +182,9 @@ consultancy in software development.  Less pain, more fun.
 .. _users are complaining: http://stackoverflow.com/questions/31772306/doesnt-codeship-support-yaml-configure-file
 .. _Travis CI: https://travis-ci.org/
 .. _Shippable: https://shippable.com/
+.. _Vexor: https://vexor.io/
 .. _Python 2.7 and 3.4: https://codeship.com/documentation/languages/python/
 .. _packages with environment markers: https://github.com/gtimelog/gtimelog/commit/e42cf0e
-.. _tox: https://testrun.org/tox/latest/
+.. _tox: https://tox.readthedocs.io/en/latest/
 .. _pull request: https://github.com/painless-software/codeship-yaml/pulls
 .. _Painless Software: https://painless.software/
