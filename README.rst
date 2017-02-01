@@ -6,13 +6,15 @@ Codeship-YAML |latest-version|
 
 YAML configuration file support for `Codeship`_.
 
-=========== ============
-Syntax Compatibility
-=========== ============
-Travis CI   |travis-ci|
-Shippable   |shippable|
-VexorCI     |vexor-ci|
-=========== ============
++------------+-------------+
+|   Syntax Compatibility   |
++============+=============+
++ Travis CI  | |travis-ci| |
++------------+-------------+
++ Shippable  | |shippable| |
++------------+-------------+
++ VexorCI    | |vexor-ci|  |
++------------+-------------+
 
 Background
 ==========
