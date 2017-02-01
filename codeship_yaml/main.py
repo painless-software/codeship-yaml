@@ -1,14 +1,18 @@
+"""
+Shell execution of YAML configuration commands for Codeship.
+"""
+from warnings import warn
+
 import os
 import sys
 import yaml
-from warnings import warn
 
 try:
     # only avalable in Python 3
     FileNotFoundError
 except NameError:
     # Python 2
-    FileNotFoundError = IOError
+    FileNotFoundError = IOError  # pylint: disable=redefined-builtin
 
 
 class YamlShellCommandsExecuter(object):
@@ -62,6 +66,9 @@ def fail(message=None, exit_code=1):
 
 
 def main():
+    """
+    Entry point for console command ``codeship-yaml``.
+    """
     if len(sys.argv) > 1:
         sections = sys.argv[1:]
         warnings = True

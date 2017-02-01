@@ -20,7 +20,7 @@ from glob import glob
 from os import remove
 from os.path import abspath, dirname, join
 from setuptools import setup, find_packages
-from setuptools.command.test import test as TestCommand
+from setuptools.command.test import test as TestCommand  # noqa
 from shlex import split
 from shutil import rmtree
 from sys import exit
