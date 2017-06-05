@@ -5,6 +5,7 @@ from warnings import warn
 
 import os
 import sys
+import time
 import yaml
 
 try:
@@ -49,7 +50,11 @@ class YamlShellCommandsExecuter(object):
             commands = []
 
         for cmd in commands:
+            print("========== Running: {0}".format(cmd))
+            start = time.time()
             status = os.system(cmd)
+            duration = round(time.time() - start, 2)
+            print("========== Finished in {1}s: {0}".format(cmd, duration))
             if status > 0:
                 fail(exit_code=status)
 
