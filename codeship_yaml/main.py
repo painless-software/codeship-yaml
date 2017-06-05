@@ -50,13 +50,36 @@ class YamlShellCommandsExecuter(object):
             commands = []
 
         for cmd in commands:
-            print("========== Running: {0}".format(cmd))
+            print(color_message('========== Running: {0}'.format(cmd), 'blue'))
             start = time.time()
             status = os.system(cmd)
             duration = round(time.time() - start, 2)
-            print("========== Finished in {1}s: {0}".format(cmd, duration))
+
+            dur_msg = "{1}s: {0}".format(cmd, duration)
+
             if status > 0:
-                fail(exit_code=status)
+                finish_msg = "========== Errored after {0}".format(dur_msg)
+                fail(message=finish_msg, exit_code=status)
+            else:
+                finish_msg = "========== Finished in {0}".format(dur_msg)
+                print(color_message(finish_msg, 'green'))
+
+
+def color_message(message, color=None):
+    """
+    Color a provided string by wrapping it in ANSI color escape codes.
+    Valid colors are blue, green and red.
+    """
+    if color == 'blue':
+        color = '\033[95m'
+    elif color == 'green':
+        color = '\033[92m'
+    elif color == 'red':
+        color = '\033[91m'
+    else:
+        return message
+
+    return '{1}{0}\033[0m'.format(message, color)
 
 
 def fail(message=None, exit_code=1):
@@ -64,7 +87,7 @@ def fail(message=None, exit_code=1):
     Safely abort script with an error status and optional message.
     """
     if message:
-        print(message)
+        print(color_message(message, 'red'))
 
     # NOTE: for some reason a large code, such as 32512, results in status 0
     sys.exit(exit_code if 1 <= exit_code <= 255 else 1)
