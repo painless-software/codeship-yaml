@@ -79,7 +79,7 @@ def log(message, color=None):
     elif color == 'red':
         color = '\033[91m'
     else:
-        color = None
+        color = ''
 
     print('{color}{message}{stop_colors}'.format(
         message=message,
