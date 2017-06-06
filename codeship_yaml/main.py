@@ -59,9 +59,8 @@ class YamlShellCommandsExecuter(object):
                 seconds=duration, command=cmd)
 
             if status > 0:
-                failure_message = '========== Errored after {}'.format(
-                    duration_msg)
-                fail(message=failure_message, exit_code=status)
+                fail('========== Errored after {}'.format(duration_msg),
+                     exit_code=status)
             else:
                 log('========== Finished in {}'.format(duration_msg),
                     color='green')
