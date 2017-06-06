@@ -72,7 +72,7 @@ def log(message, color=None):
     codes. Valid colors are blue, green and red.
     """
     if color == 'blue':
-        color = '\033[95m'
+        color = '\033[94m'
     elif color == 'green':
         color = '\033[92m'
     elif color == 'red':

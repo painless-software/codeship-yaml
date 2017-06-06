@@ -151,6 +151,11 @@ Credits
 This project is brought to you by `Painless Software`_, a best-practice
 consultancy in software development.  Less pain, more fun.
 
+A big, massive **"Thank you!"** to all contributors:
+
+- `Dave Allie <https://github.com/daveallie>`__ (sectioning and coloring of
+  command output)
+
 
 .. |latest-version| image:: https://img.shields.io/pypi/v/codeship-yaml.svg
    :alt: Latest version on PyPI
@@ -158,7 +163,7 @@ consultancy in software development.  Less pain, more fun.
 .. |codeship| image:: https://codeship.com/projects/1ff93f70-dc1f-0133-bbf0-32121d68b74a/status?branch=master
    :alt: Build status
    :target: https://codeship.com/projects/144011
-.. |travis-ci| image:: https://travis-ci.org/painless-software/codeship-yaml.svg
+.. |travis-ci| image:: https://travis-ci.org/painless-software/codeship-yaml.svg?branch=master
    :alt: Build status
    :target: https://travis-ci.org/painless-software/codeship-yaml
 .. |shippable| image:: https://api.shippable.com/projects/5701ae1233e2f1203f8cab18/badge?branch=master
