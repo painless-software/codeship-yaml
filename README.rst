@@ -2,7 +2,7 @@
 Codeship-YAML |latest-version|
 ==============================
 
-|codeship| |health| |python-support| |downloads| |license| |gitter|
+|codeship| |health| |python-support| |license| |gitter|
 
 YAML configuration file support for `Codeship`_.
 
@@ -178,9 +178,6 @@ A big, massive **"Thank you!"** to all contributors:
 .. |python-support| image:: https://img.shields.io/pypi/pyversions/codeship-yaml.svg
    :target: https://pypi.python.org/pypi/codeship-yaml
    :alt: Python versions
-.. |downloads| image:: https://img.shields.io/pypi/dm/codeship-yaml.svg
-   :alt: Monthly downloads from PyPI
-   :target: https://pypi.python.org/pypi/codeship-yaml
 .. |license| image:: https://img.shields.io/pypi/l/codeship-yaml.svg
    :alt: Software license
    :target: https://www.gnu.org/licenses/gpl-3.0.html

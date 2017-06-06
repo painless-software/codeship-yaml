@@ -9,7 +9,7 @@ import time
 import yaml
 
 try:
-    # only avalable in Python 3
+    # only available in Python 3
     FileNotFoundError
 except NameError:
     # Python 2
