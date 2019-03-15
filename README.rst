@@ -98,23 +98,10 @@ platforms already, please consider placing a `pull request`_.
 Python 3
 ========
 
-The build image of Codeship's classic infrastructure supports both `Python
-2.7 and 3.4`_, but for Python 3 some outdated packages will make you run into
-broken builds (e.g. when you install `packages with environment markers`_ in
-setup.py).
-
-To have fully working Python 3.4 support use the following setup commands in
-*Project Settings* > *Test Settings* > **Setup Commands**:
-
-.. code-block:: bash
-
-   virtualenv -p $(which python3) "${HOME}/cache/python3_env"
-   . "${HOME}/cache/python3_env/bin/activate" && python --version
-   pip install --upgrade setuptools && pip list | grep setuptools
-
-Update:
-   More Python versions are now supported via a ``python.sh`` script
-   provided by Codeship. See the `top of the script`_ for usage instructions.
+The build image of Codeship Basic runs `Python 2.7 by default`_, but versions
+3.4 through 3.7 are also installed. Codeship requires you to activate them
+using ``pyenv``. Python is not Codeship's main expertise though, so expect a
+bumpy ride. Activating Python version could be made easier. Sad story.
 
 Contribute
 ==========
@@ -189,9 +176,7 @@ A big, massive **"Thank you!"** to all contributors:
 .. _Travis CI: https://travis-ci.org/
 .. _Shippable: https://shippable.com/
 .. _Vexor: https://vexor.io/
-.. _Python 2.7 and 3.4: https://codeship.com/documentation/languages/python/
-.. _packages with environment markers: https://github.com/gtimelog/gtimelog/commit/e42cf0e
-.. _top of the script: https://github.com/codeship/scripts/blob/master/languages/python.sh#L2-L10
+.. _Python 2.7 by default: https://documentation.codeship.com/basic/languages-frameworks/python/
 .. _tox: https://tox.readthedocs.io/en/latest/
 .. _pull request: https://github.com/painless-software/codeship-yaml/pulls
 .. _Painless Software: https://painless.software/
