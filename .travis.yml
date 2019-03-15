@@ -1,5 +1,32 @@
 language: python
+python:
+  - 2.7
+  - 3.4
+  - 3.5
+  - 3.6
+  - 3.7
+
 install:
-  - pip install virtualenv
+  - pip install tox-travis
 script:
-  - python setup.py test
+  - tox
+
+matrix:
+  include:
+    - { python: 2.7, env: TOXENV=bandit-py27 }
+    - { python: 2.7, env: TOXENV=flake8-py27 }
+    - { python: 2.7, env: TOXENV=pylint-py27 }
+
+    - { python: 3.7, env: TOXENV=bandit-py37 }
+    - { python: 3.7, env: TOXENV=flake8-py37 }
+    - { python: 3.7, env: TOXENV=pylint-py37 }
+
+deploy:
+  provider: pypi
+  user: bittner
+  password:
+    secure: jXzaGKaJWpJl7ntE7jNObbOgMaLAsQ7tCse9Pe0IF/tFnySy4+69f7telI78SgJtaveWoJpwiC0mXFN0TZlER275i6u5gGEIS9DKwmo+PVI/JaBXLpraAq93VlKEo/tpTRgDFORVnbMg+bRPYfqkQdIN65mKxZ9ytTQ7GZDfB42FIUd2VRGl29fB3fEJD1ma93/th50ovVxvfl3Q1AgWOaVeH2ypnE1r/3lRqLuj47gakrapQNUwNe9hJg8R6TAXNlwLmsKWGtUYvurSDjYr3CuyOvGbiv2cTiclqQRspbLM0txRu9pL/Fhr36MM/l2o2BLLjkPZFbr98Vt0A1Ah8CcgEnOsYVXwQB5hAyzjflwlpuWZBB39qjNgiylq2eIpGZWZv6z7jIlBmn2THHG/kbX6+lgkyJOiXXqy5sqLPG9txlQgkuHs+lty5sKQ1T305P6j5WQD/uK/iEfYnCdP654hye8iWlxObsd/qk1ZaGRnEVMVvci80uJoHq8GxnPw3LdpNzUX6Gq0r4PBQMNyZ0S+RuPRZ1VIsSv6Xi+h6ORrgRfYMNC5luzxGARuVoS4/4hBRJyjzCHIeGzzh/w957/UvaXPDqTiRtSBpaWpo4f3GDBpkksPxKy3MyIVrxU71bhvTME3BdfEsWY+ltBZPeo2UqnKVz6oZD8nkxWHB/w=
+  on:
+    tags: true
+  distributions: sdist bdist_wheel
+  skip_existing: true

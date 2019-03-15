@@ -172,8 +172,8 @@ A big, massive **"Thank you!"** to all contributors:
 .. |vexor-ci| image:: https://ci.vexor.io/projects/15c50c86-b271-462f-876a-6461ff9debaa/status.svg
    :alt: Build status
    :target: https://ci.vexor.io/ui/projects/15c50c86-b271-462f-876a-6461ff9debaa/builds
-.. |health| image:: https://landscape.io/github/painless-software/codeship-yaml/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/painless-software/codeship-yaml/master
+.. |health| image:: https://img.shields.io/codacy/grade/5a3747dd8bcb4f16a57dd65904315733/master.svg
+   :target: https://www.codacy.com/app/painless/codeship-yaml
    :alt: Code health
 .. |python-support| image:: https://img.shields.io/pypi/pyversions/codeship-yaml.svg
    :target: https://pypi.python.org/pypi/codeship-yaml

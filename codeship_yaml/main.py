@@ -16,7 +16,7 @@ except NameError:
     FileNotFoundError = IOError  # pylint: disable=redefined-builtin
 
 
-class YamlShellCommandsExecuter(object):
+class YamlShellCommandsExecuter:
     """
     Read a YAML file with shell commands in its sections, and execute them.
     """
