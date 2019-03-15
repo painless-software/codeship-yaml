@@ -21,9 +21,7 @@ from os import remove
 from os.path import abspath, dirname, join
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand  # noqa
-from shlex import split
 from shutil import rmtree
-from sys import exit
 
 import codeship_yaml as package
 
@@ -51,27 +49,6 @@ KEYWORDS = [
     'infrastructure',
     'tools',
 ]
-
-
-class Tox(TestCommand):
-    user_options = [('tox-args=', 'a', "Arguments to pass to tox")]
-
-    def initialize_options(self):
-        TestCommand.initialize_options(self)
-        self.tox_args = None
-
-    def finalize_options(self):
-        TestCommand.finalize_options(self)
-        self.test_args = []
-        self.test_suite = True
-
-    def run_tests(self):
-        from tox import cmdline
-        args = self.tox_args
-        if args:
-            args = split(self.tox_args)
-        errno = cmdline(args=args)
-        exit(errno)
 
 
 class Clean(TestCommand):
@@ -135,7 +112,6 @@ setup(
     tests_require=['tox'],
     cmdclass={
         'clean': Clean,
-        'test': Tox,
     },
     entry_points={
         'console_scripts': [

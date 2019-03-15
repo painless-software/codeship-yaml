@@ -120,19 +120,17 @@ Contribute
 ==========
 
 For development we use `tox`_, which handles both static code analysis and
-tests for all supported Python versions.  ``tox`` is automatically installed
-for the test runs and will work out-of-the-box when you run the tests through
-``setup.py``.  Unfortunately, you'll have to install ``virtualenv`` though:
+tests for all supported Python versions.
 
-.. code-block:: bash
+.. code-block:: console
 
-   $ pip install virtualenv
+   $ pip install tox
 
 After making your code changes don't forget to add tests, and simply run:
 
 .. code-block:: bash
 
-   $ python setup.py test
+   $ tox
 
 When you place a `pull request`_ all tests are run on the build server
 infrastructure of `Codeship`_, `Travis CI`_, `Shippable`_ and `Vexor`_ again.
