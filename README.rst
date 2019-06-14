@@ -13,8 +13,6 @@ YAML configuration file support for `Codeship`_.
 +------------+-------------+
 + Shippable  | |shippable| |
 +------------+-------------+
-+ VexorCI    | |vexor-ci|  |
-+------------+-------------+
 
 Background
 ==========
@@ -120,8 +118,8 @@ After making your code changes don't forget to add tests, and simply run:
    $ tox
 
 When you place a `pull request`_ all tests are run on the build server
-infrastructure of `Codeship`_, `Travis CI`_, `Shippable`_ and `Vexor`_ again.
-Please check if they all pass to ensure the syntax stays compatible across the
+infrastructure of `Codeship`_, `Travis CI`_ and `Shippable`_ again. Please
+check if they all pass to ensure the syntax stays compatible across the
 different build infrastructures.
 
 To remove all build files and folders including Python byte code you can run:
@@ -145,18 +143,15 @@ A big, massive **"Thank you!"** to all contributors:
 .. |latest-version| image:: https://img.shields.io/pypi/v/codeship-yaml.svg
    :alt: Latest version on PyPI
    :target: https://pypi.python.org/pypi/codeship-yaml
-.. |codeship| image:: https://codeship.com/projects/1ff93f70-dc1f-0133-bbf0-32121d68b74a/status?branch=master
+.. |codeship| image:: https://img.shields.io/codeship/7dea71d0-706e-0137-2928-164b86d3d83d/master.svg
    :alt: Build status
    :target: https://codeship.com/projects/144011
-.. |travis-ci| image:: https://travis-ci.org/painless-software/codeship-yaml.svg?branch=master
+.. |travis-ci| image:: https://img.shields.io/travis/painless-software/codeship-yaml/master.svg
    :alt: Build status
    :target: https://travis-ci.org/painless-software/codeship-yaml
-.. |shippable| image:: https://api.shippable.com/projects/5701ae1233e2f1203f8cab18/badge?branch=master
+.. |shippable| image:: https://img.shields.io/shippable/5b3e90d7fbb95107000086b3/master.svg
    :alt: Build status
    :target: https://app.shippable.com/projects/5701ae1233e2f1203f8cab18
-.. |vexor-ci| image:: https://ci.vexor.io/projects/15c50c86-b271-462f-876a-6461ff9debaa/status.svg
-   :alt: Build status
-   :target: https://ci.vexor.io/ui/projects/15c50c86-b271-462f-876a-6461ff9debaa/builds
 .. |health| image:: https://img.shields.io/codacy/grade/5a3747dd8bcb4f16a57dd65904315733/master.svg
    :target: https://www.codacy.com/app/painless/codeship-yaml
    :alt: Code health
@@ -175,7 +170,6 @@ A big, massive **"Thank you!"** to all contributors:
 .. _users are complaining: http://stackoverflow.com/questions/31772306/doesnt-codeship-support-yaml-configure-file
 .. _Travis CI: https://travis-ci.org/
 .. _Shippable: https://shippable.com/
-.. _Vexor: https://vexor.io/
 .. _Python 2.7 by default: https://documentation.codeship.com/basic/languages-frameworks/python/
 .. _tox: https://tox.readthedocs.io/en/latest/
 .. _pull request: https://github.com/painless-software/codeship-yaml/pulls
