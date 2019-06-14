@@ -1,4 +1,4 @@
 install:
-  - pip install virtualenv
+  - pip install tox
 script:
-  - python setup.py test
+  - tox
