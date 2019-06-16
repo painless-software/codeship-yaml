@@ -152,7 +152,7 @@ A big, massive **"Thank you!"** to all contributors:
    :target: https://pypi.python.org/pypi/codeship-yaml
 .. |codeship| image:: https://img.shields.io/codeship/7dea71d0-706e-0137-2928-164b86d3d83d/master.svg
    :alt: Build status
-   :target: https://codeship.com/projects/144011
+   :target: https://app.codeship.com/projects/7dea71d0-706e-0137-2928-164b86d3d83d
 .. |travis-ci| image:: https://img.shields.io/travis/painless-software/codeship-yaml/master.svg
    :alt: Build status
    :target: https://travis-ci.org/painless-software/codeship-yaml
