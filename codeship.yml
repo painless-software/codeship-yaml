@@ -1,4 +1,7 @@
 install:
   - pip install tox
+before_script:
+  - pyenv global 2.7 3.4 3.5 3.6 3.7
 script:
-  - tox
+  - tox -e flake8-py3,pylint-py3
+  - tox -e py27,py34,py35,py36,py37

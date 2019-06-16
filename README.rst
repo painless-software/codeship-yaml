@@ -101,6 +101,14 @@ The build image of Codeship Basic runs `Python 2.7 by default`_, but versions
 using ``pyenv``. Python is not Codeship's main expertise though, so expect a
 bumpy ride. Activating Python version could be made easier. Sad story.
 
+To make all Python versions available in parallel you may add this to your
+``codeship.yml`` file:
+
+.. code-block:: yaml
+
+    before_script:
+      - pyenv global 2.7 3.4 3.5 3.6 3.7
+
 Contribute
 ==========
 
