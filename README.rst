@@ -126,7 +126,7 @@ To remove all build files and folders including Python byte code you can run:
 
 .. code-block:: bash
 
-   $ python setup.py clean
+   $ tox -e clean
 
 Credits
 =======
@@ -151,7 +151,7 @@ A big, massive **"Thank you!"** to all contributors:
    :target: https://travis-ci.org/painless-software/codeship-yaml
 .. |shippable| image:: https://img.shields.io/shippable/5b3e90d7fbb95107000086b3/master.svg
    :alt: Build status
-   :target: https://app.shippable.com/projects/5701ae1233e2f1203f8cab18
+   :target: https://app.shippable.com/github/painless-software/codeship-yaml/dashboard
 .. |health| image:: https://img.shields.io/codacy/grade/5a3747dd8bcb4f16a57dd65904315733/master.svg
    :target: https://www.codacy.com/app/painless/codeship-yaml
    :alt: Code health
