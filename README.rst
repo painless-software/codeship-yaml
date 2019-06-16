@@ -71,20 +71,20 @@ commands into the below-mentioned text boxes of your Codeship project:
 
 *Project Settings* > *Test Settings* > **Setup Commands**
 
-.. code-block:: bash
+.. code-block:: console
 
    pip install codeship-yaml
    codeship-yaml install
 
 *Project Settings* > *Test Settings* > **Test Commands**
 
-.. code-block:: bash
+.. code-block:: console
 
    codeship-yaml before_script script
 
 *Project Settings* > *Deployment* > **(branch name)**
 
-.. code-block:: bash
+.. code-block:: console
 
    codeship-yaml after_success
 
@@ -99,15 +99,14 @@ Python 3
 The build image of Codeship Basic runs `Python 2.7 by default`_, but versions
 3.4 through 3.7 are also installed. Codeship requires you to activate them
 using ``pyenv``. Python is not Codeship's main expertise though, so expect a
-bumpy ride. Activating Python version could be made easier. Sad story.
+bumpy ride. Activating Python versions could be made easier. Sad story.
 
-To make all Python versions available in parallel you may add this to your
-``codeship.yml`` file:
+To make all Python versions available in parallel add the following command
+to the top of your *Project Settings* > **Setup Commands** on Codeship:
 
-.. code-block:: yaml
+.. code-block:: console
 
-    before_script:
-      - pyenv global 2.7 3.4 3.5 3.6 3.7
+    pyenv global 2.7 3.4 3.5 3.6 3.7
 
 Contribute
 ==========
